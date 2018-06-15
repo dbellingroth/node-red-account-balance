@@ -21,7 +21,7 @@ module.exports = RED => {
     const pin = node.credentials.pin;
     const hbciUrl = node.credentials.url;
     const iban = node.credentials.iban;
-    setInterval(() => {
+    const interval = setInterval(() => {
       getBalance(bankCode, hbciUrl, user, pin, iban).then(balance => {
         console.log(balance);
         node.status({ fill: "green", shape: "dot", text: `${balance.value} ${balance.currency}` });
@@ -34,7 +34,11 @@ module.exports = RED => {
       }).catch(error => {
         console.error(error);
       });
-    }, config.interval)
+    }, config.interval);
+    node.on('close', done => {
+      clearInterval(interval);
+      done();
+    });
   }
 
   RED.nodes.registerType('account-balance', AccountBalanceNode, {
