@@ -5,7 +5,7 @@ async function getBalance(bankCode, hbciUrl, user, pin, iban) {
   await client.EstablishConnection();
   const account = client.konten
     .filter(k => k.iban == iban)[0];
-  if (account == null) throw new Error(`Account with IBAN ${config.iban} was not found`);
+  if (account == null) throw new Error(`Account with IBAN ${iban} was not found`);
   let balance = await client.MsgGetSaldo(account.sepa_data);
   await client.MsgEndDialog()
   client.closeSecure();
