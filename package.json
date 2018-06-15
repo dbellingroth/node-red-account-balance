@@ -1,0 +1,21 @@
+{
+  "name": "node-red-account-balance",
+  "version": "0.0.1",
+  "description": "A node-red node to check your bank account balance",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "David Bellingroth",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "account-balance": "account-balance.js"
+    }
+  },
+  "dependencies": {
+    "open-fin-ts-js-client": "git+https://github.com/reinerBa/open_fints_js_client.git#fe7b6c03e9a7d0b77954f139605beeb5d4aca8dc"
+  }
+}

@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType('account-balance',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: "Account balance"},
+            interval: {value: "60000"},
+        },
+        credentials: {
+            bankCode: {type: 'text'}, 
+            url: {type: 'text'},
+            user: {type: 'text'},
+            pin: {type: 'password'},
+            iban: {type: 'text'}
+        },
+        inputs:0,
+        outputs:1,
+        label: function() {
+            return this.name||"account-balance";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="account-balance">
+    <div class="form-row">
+        <label for="node-input-interval"><i class="icon-tag"></i>Interval</label>
+        <input type="number" id="node-input-interval" placeholder="Interval">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-bankCode"><i class="icon-tag"></i> Bank code</label>
+        <input type="text" id="node-input-bankCode" placeholder="Bank code">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-tag"></i>HBCI URL</label>
+        <input type="text" id="node-input-url" placeholder="HBCI URL">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user"><i class="icon-tag"></i>User</label>
+        <input type="text" id="node-input-user" placeholder="User">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pin"><i class="icon-tag"></i>PIN</label>
+        <input type="password" id="node-input-pin" placeholder="PIN">
+    </div>
+    <div class="form-row">
+        <label for="node-input-iban"><i class="icon-tag"></i>IBAN</label>
+        <input type="text" id="node-input-iban" placeholder="IBAN">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="account-balance">
+    <p>A node that checks your account balance</p>
+</script>
