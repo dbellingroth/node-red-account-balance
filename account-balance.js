@@ -21,7 +21,6 @@ module.exports = RED => {
     const pin = node.credentials.pin;
     const hbciUrl = node.credentials.url;
     const iban = node.credentials.iban;
-    console.log(config.interval);
     setInterval(() => {
       getBalance(bankCode, hbciUrl, user, pin, iban).then(balance => {
         console.log(balance);
