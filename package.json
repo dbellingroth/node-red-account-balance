@@ -1,6 +1,6 @@
 {
   "name": "node-red-account-balance",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A node-red node to check your bank account balance",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
