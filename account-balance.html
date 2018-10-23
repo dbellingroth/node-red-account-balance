@@ -1,7 +1,8 @@
 <script type="text/javascript">
     RED.nodes.registerType('account-balance',{
-        category: 'function',
+        category: 'financial',
         color: '#a6bbcf',
+        icon: 'dollar.svg',
         defaults: {
             name: {value: "Account balance"},
             interval: {value: "60000"},
@@ -23,12 +24,12 @@
 
 <script type="text/x-red" data-template-name="account-balance">
     <div class="form-row">
-        <label for="node-input-interval"><i class="icon-tag"></i>Interval</label>
-        <input type="number" id="node-input-interval" placeholder="Interval">
-    </div>
-    <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-interval"><i class="icon-tag"></i>Interval</label>
+        <input type="number" id="node-input-interval" placeholder="Interval">
     </div>
     <div class="form-row">
         <label for="node-input-bankCode"><i class="icon-tag"></i> Bank code</label>
