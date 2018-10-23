@@ -1,5 +1,5 @@
 {
-  "name": "node-red-account-balance",
+  "name": "node-red-contrib-account-balance",
   "version": "0.0.5",
   "description": "A node-red node to check your bank account balance",
   "scripts": {
